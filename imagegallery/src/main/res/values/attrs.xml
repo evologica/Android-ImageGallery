@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ImageGallery">
+        <attr name="columnsNumberPortrait" format="integer"/>
+        <attr name="columnsNumberLandscape" format="integer"/>
+        <attr name="gap" format="dimension"/>
+
+    </declare-styleable>
+</resources>
