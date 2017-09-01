@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,24 +87,18 @@ public class ImageGalleryAdapter extends RecyclerView.Adapter<ImageGalleryAdapte
         ImageView imageView = holder.mImageView;
         if(mFragment != null)
             Glide.with(mFragment)
-                    .fromString()
-                    .crossFade()
-                    .centerCrop()
                     .load(mData.get(position))
+                    .apply(RequestOptions.centerCropTransform())
                     .into(imageView);
         else if (mActivity != null)
             Glide.with(mActivity)
-                    .fromString()
-                    .crossFade()
-                    .centerCrop()
                     .load(mData.get(position))
+                    .apply(RequestOptions.centerCropTransform())
                     .into(imageView);
         else
             Glide.with(mContext)
-                    .fromString()
-                    .crossFade()
-                    .centerCrop()
                     .load(mData.get(position))
+                    .apply(RequestOptions.centerCropTransform())
                     .into(imageView);
     }
 
